@@ -19,6 +19,7 @@
 \newtheorem{lemma}[theorem]{Лемма}
 \newtheorem{proposition}[theorem]{Утверждение}
 \newtheorem{corollary}[theorem]{Следствие}
+\newtheorem*{auxlemma}{Лемма}
 \theoremstyle{definition}
 \newtheorem{definition}[theorem]{Определение}
 \newtheorem{example}[theorem]{Пример}
@@ -636,7 +637,7 @@ $L_AR_B=R_BL_A$, поскольку обе композиции
 \end{enumerate}
 При этом $f(L_A)=L_{f(A)}$ и $f(R_A)=R_{f(A)}$.
 \end{theorem}
-\begin{proof}
+\begin{proof}[Доказательство прямых импликаций]
 Если $A$~--- генератор, положим $\mu_{L_A}=L\circ\mu_A$.
 Это композиция двух непрерывных гомоморфизмов, и
 $\mu_{L_A}(x)=L_{\mu_A(x)}=L_A$. Так получаем
@@ -648,12 +649,22 @@ $\mu_{R_A}=R\circ\mu_A$. Поскольку $\mathcal F_1$
 \]
 Следовательно, $\mu_{R_A}$ также непрерывный
 гомоморфизм со значением $R_A$ на $x$.
+\end{proof}
 
-Для перехода $(2)\Rightarrow(1)$ лектор доказывает лемму
-\at{8kQuUxC-VVg}{2318}{38:38}. Во-первых,
-$L_A R_B X=AXB=R_B L_A X$ для всякого $X$.
-Во-вторых, $f(L_A)R_B=R_Bf(L_A)$. Для второго
-равенства обозначим $P=L_A$, $Q=R_B$ и подставим
+\begin{auxlemma}[Коммутирование левых и правых регулярных представлений]
+\at{8kQuUxC-VVg}{2318}{38:38}.
+Пусть $A,B\in\mathcal A$.
+\begin{enumerate}
+ \item[(а)] $L_A R_B=R_B L_A$.
+ \item[(б)] Если $L_A$~--- генератор и для $f\in\mathcal F_1$
+ выполнено условие на разностную производную, то
+ $f(L_A)R_B=R_B f(L_A)$.
+\end{enumerate}
+\end{auxlemma}
+\begin{proof}
+Для пункта (а) при любом $X\in\mathcal A$ имеем
+$L_A R_B X=AXB=R_B L_A X$.
+Для пункта (б) обозначим $P=L_A$, $Q=R_B$ и подставим
 $\overset{1}{P},\overset{3}{P},\overset{2}{Q}$
 в $F(x,y,z)=(f(y)-f(x))z$. Тогда
 \[
@@ -670,8 +681,12 @@ $\overset{1}{P},\overset{3}{P},\overset{2}{Q}$
 В последней строке раздвинули индексы в разностной
 производной. При порядке действий $1,2,3$ скобка
 даёт $PQ-QP=[L_A,R_B]$, то есть нулевой оператор.
+\end{proof}
 
-Пусть теперь дано исчисление $\mu_{L_A}$. Тогда
+\begin{proof}[Доказательство обратных импликаций]
+Пусть дано исчисление $\mu_{L_A}$. По пункту (б) леммы
+$f(L_A)$ коммутирует с $R_X$ для любого $X\in\mathcal A$.
+Тогда
 \[
  f(L_A)X=f(L_A)R_X\id
          =R_Xf(L_A)\id=\bigl(f(L_A)\id\bigr)X.
